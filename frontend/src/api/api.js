@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE = 'http://localhost:5000/api';
+const BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 export const getProducts = (search='', category='') =>
   axios.get(`${BASE}/products?search=${search}&category=${category}`);
 export const getProduct = (id) => axios.get(`${BASE}/products/${id}`);
